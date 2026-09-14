@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { SiteHeader } from "@/components/blog/site-header";
+import { MarkdownContent } from "@/components/blog/markdown-content";
 import { api } from "@/lib/api";
 
 export const Route = createFileRoute("/articles/$slug")({
@@ -48,9 +49,11 @@ function ArticlePage() {
           </p>
         </header>
         <article className="mx-auto w-full max-w-3xl px-6 pb-28 pt-8 lg:px-8">
-          <div className="whitespace-pre-wrap text-base leading-8 text-foreground">
-            {article?.content ?? "Loading article..."}
-          </div>
+          {article ? (
+            <MarkdownContent content={article.content} />
+          ) : (
+            <p>Loading article...</p>
+          )}
         </article>
       </main>
     </div>

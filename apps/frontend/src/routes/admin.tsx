@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Eye, FileText, LogOut, Save, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ArticleContent } from "@/components/blog/article-content";
+import { MarkdownContent } from "@/components/blog/markdown-content";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -309,8 +309,8 @@ function AdminPage() {
               {title || "Untitled article"}
             </h2>
             <p className="mt-5 text-lg text-muted-foreground">{excerpt}</p>
-            <div className="mt-9 whitespace-pre-wrap text-base leading-8 text-foreground">
-              <ArticleContent />
+            <div className="mt-9">
+              <MarkdownContent content={markdown} />
             </div>
           </div>
         </section>

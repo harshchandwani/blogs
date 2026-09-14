@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import architectureImage from "@/assets/article-architecture.jpg";
 import { SiteHeader } from "@/components/blog/site-header";
+import { MarkdownContent } from "@/components/blog/markdown-content";
 import { api } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
@@ -91,9 +92,11 @@ function ArticlePage() {
           </figcaption>
         </figure>
         <article className="mx-auto w-full max-w-3xl px-6 pb-28 pt-16 lg:px-8">
-          <div className="whitespace-pre-wrap text-base leading-8 text-foreground">
-            {article?.content ?? "Loading article..."}
-          </div>
+          {article ? (
+            <MarkdownContent content={article.content} />
+          ) : (
+            <p>Loading article...</p>
+          )}
         </article>
       </main>
     </div>

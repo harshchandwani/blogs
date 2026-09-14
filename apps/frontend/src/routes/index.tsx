@@ -79,17 +79,17 @@ function Index() {
           aria-labelledby="page-title"
         >
           <p className="mb-5 text-xs font-semibold uppercase text-accent">
-            Learning in public · Issue 04
+            Learning in public · by Harsh Chandwani
           </p>
           <h1
             id="page-title"
             className="max-w-2xl text-5xl font-semibold leading-[1.08] text-foreground sm:text-6xl"
           >
-            Notes from building things carefully.
+            Notes from learning new things in depth.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Essays and field notes on software, interfaces, and the decisions
-            that shape both.
+            Essays and articles around technology, design, and life.
+            Find articles around system design.
           </p>
         </section>
 
