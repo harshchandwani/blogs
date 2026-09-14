@@ -1,11 +1,11 @@
 // src/services/articles.service.ts
-import { eq } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 import { db } from '../db';
 import { articles, NewArticle } from '../db/schema';
 import { slugify } from '../utils/slug';
 
 export async function getAllArticles(includeUnpublished = false) {
-  const rows = await db.select().from(articles);
+  const rows = await db.select().from(articles).orderBy(desc(articles.createdAt));
   return includeUnpublished ? rows : rows.filter((a) => a.published);
 }
 
