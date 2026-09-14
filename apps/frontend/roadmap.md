@@ -1,0 +1,2 @@
+- [x] Build the approved three-page developer-editorial blog UI.
+- [x] Use spacious, equal left/right margins and show each article image right of its title and introduction on the dashboard.
